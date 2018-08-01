@@ -24,7 +24,6 @@ cc.Class({
         this.colCallBack = cb;
     },
     onCollisionEnter:function(other,self){
-        zlog.log("collision enter");
         this.colCallBack();
     }
     // update (dt) {},

@@ -12,7 +12,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        speed:10,
+        speed:1,
         squairArr:[],
         squairPf:{
             type:cc.Node,
@@ -32,6 +32,7 @@ cc.Class({
     // onLoad () {},
 
     start () {
+        this.speed = 3;
         this.windowWidth = cc.view.getVisibleSize().width;
         this.generateSquair(-422,cc.v2(672,400));
         this.pushAfter();
@@ -87,7 +88,7 @@ cc.Class({
      update (dt) {
         for(var i=0;i<this.squairArr.length;i++){
             var pos = this.squairArr[i].position;
-            pos.x-=3;
+            pos.x -= this.speed;
             this.squairArr[i].position = pos;
         }
         this.checkRemvoeFirst();
